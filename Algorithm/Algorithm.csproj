@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B3C5A915-5AE9-4778-98A6-9A4157024C5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>アルゴリズム</RootNamespace>
-    <AssemblyName>アルゴリズム</AssemblyName>
+    <RootNamespace>Algorithm</RootNamespace>
+    <AssemblyName>Algorithm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
