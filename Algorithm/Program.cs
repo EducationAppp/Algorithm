@@ -47,7 +47,23 @@ namespace Algorithm
                     }
                 }
             }
-            
+
+
+
+            //③ハッシュ探索法　 探したい値は「6」の場合
+            var arrayNumber3 = new int[10] { 1, 3, 5, 7, 9, 2, 4, 6, 8 ,10};
+            var arrayH = new int[20];//ハッシュ計算結果を入れる配列　大きさは2倍とっておく
+
+            //余りの値と格納先の添え字を一致させるように格納する
+            foreach (var i in arrayNumber3) {
+                var k = 0;
+                k = i % 20;//格納先が20個なので20で割る(手作りハッシュ計算)
+                if (arrayH[k] == 0) {
+                    arrayH[k] = arrayNumber3[i];
+                }
+
+
+            }
 
 
 
