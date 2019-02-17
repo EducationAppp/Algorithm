@@ -28,11 +28,25 @@ namespace Algorithm
             }
             //************************************************************************************************
             //ハッシュ探索法
-            //リストに連続した値を設定する(0,1,2,3,‥18,19,20が生成される)
-            var continuousList = Enumerable.Range(0, 20).ToList().AsReadOnly();
+            //リストに連続した値を代入する(0,1,2,3,‥9が生成される)
+            var continuousList = Enumerable.Range(0, 10).ToList().AsReadOnly();
 
+            var hash = new HashingMethod(continuousList);
 
+            foreach (var i in continuousList) {
+                Console.WriteLine($"リスト(continuousList)の値{i}をハッシュ値に変換します。");
+                hash.HashValueCreater(i);
+            }
+            //ハッシュの衝突をおこすため、もう一度同じこと(foreach)をする
+            foreach (var i in continuousList)
+            {
+                Console.WriteLine($"リスト(continuousList)の値{i}をハッシュ値に変換します。");
+                hash.HashValueCreater(i);
+            }
 
+            Console.WriteLine($"*****リストの値を全てハッシュ変換しました。*****");
+
+            var revrList = Enumerable.Reverse(continuousList).ToList();
 
 
         }
