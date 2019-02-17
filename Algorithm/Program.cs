@@ -10,74 +10,68 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            //①線形探索法(リニアサーチ) 探したい値は「6」の場合
-            var arrayNumber = new int[10] { 1,3,5,7,9,0,2,4,6,8};
-            foreach(var i in arrayNumber) {
-                if (i == 6)
-                {
-                    Console.WriteLine("線形探索法(リニアサーチ)で探しました");
-                }
-            };
+            //線形探索法(リニアサーチ)
+            LinearSearch.LinearSearcher(6);
+            //************************************************************************************************
+            //2分探索法(バイナリサーチ)
+            var numbers = new int[]{
+                0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+            }.ToList().AsReadOnly();
 
-            //②二分探索法(バイナリサーチ) 探したい値は「6」の場合
-            var arrayNumber2 = new int[17] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
-            //添え字　　　　　　　　　　　　0.1,2,3,4,5,6,7,8,9, 10,11,12,13,14,15,16
-
-            //添え字で考える
-            var firstArray = 0;
-            var arrayLength = arrayNumber2.Length;
-
-
-            while (firstArray<= arrayLength) {
-                var midArray = (firstArray + arrayLength) / 2;
-                if (arrayNumber2[midArray] == 6)
-                {
-                    Console.WriteLine("二分探索法(バイナリサーチ)で探しました");
-                    return;
-                }
-                else
-                {
-                    if (arrayNumber2[midArray] < 6)
-                    {
-                        firstArray = midArray + 1;
-                    }
-                    else
-                    {
-                        arrayLength = midArray - 1;
-                    }
-                }
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.WriteLine($"{i}という値がリスト(numbers)の何番目にあるのかを探します。");
+                var  index= new BinarySearch(numbers).SearchIndex(i);
+                //インデックス番号は0始まりなので、1始まりで数えたいため、「+1」する
+                index = index + 1;
+                Console.WriteLine($"{i} の場所は {index} 番目です。");
             }
-
-
-
-            //③ハッシュ探索法　 探したい値は「6」の場合
-            var arrayNumber3 = new int[10] { 1, 3, 5, 7, 9, 2, 4, 6, 8 ,10};
-            var arrayH = new int[20];//ハッシュ計算結果を入れる配列　大きさは2倍とっておく
-
-            //余りの値と格納先の添え字を一致させるように格納する
-            foreach (var i in arrayNumber3) {
-                var k = 0;
-                k = i % 20;//格納先が20個なので20で割る(手作りハッシュ計算)
-                if (arrayH[k] == 0) {
-                    arrayH[k] = arrayNumber3[i];
-                }
-
-
-            }
+            //************************************************************************************************
+            //ハッシュ探索法
+            //リストに連続した値を設定する(0,1,2,3,‥18,19,20が生成される)
+            var continuousList = Enumerable.Range(0, 20).ToList().AsReadOnly();
 
 
 
 
 
-            //var list = new List<String>();
-
-            //for (var i = 0; i < 100; i++)
-            //{
-            //    var str = i.ToString();
-            //    list.Add(str);
-            //}
-            ////list.ForEach(i => Console.WriteLine(i));
-            //list.ForEach(Console.WriteLine);
         }
     }
 }
+
+
+
+
+//}
+
+
+
+////③ハッシュ探索法　 探したい値は「6」の場合
+//var arrayNumber3 = new int[10] { 1, 3, 5, 7, 9, 2, 4, 6, 8 ,10};
+//var arrayH = new int[20];//ハッシュ計算結果を入れる配列　大きさは2倍とっておく
+
+////余りの値と格納先の添え字を一致させるように格納する
+//foreach (var i in arrayNumber3) {
+//    var k = 0;
+//    k = i % 20;//格納先が20個なので20で割る(手作りハッシュ計算)
+//    if (arrayH[k] == 0) {
+//        arrayH[k] = arrayNumber3[i];
+//    }
+
+
+//}
+
+
+
+
+
+//var list = new List<String>();
+
+//for (var i = 0; i < 100; i++)
+//{
+//    var str = i.ToString();
+//    list.Add(str);
+//}
+////list.ForEach(i => Console.WriteLine(i));
+//list.ForEach(Console.WriteLine);
+
