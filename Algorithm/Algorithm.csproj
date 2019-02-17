@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="Education.cs" />
     <Compile Include="HashingMethod.cs" />
     <Compile Include="LinearSearch.cs" />
     <Compile Include="Program.cs" />

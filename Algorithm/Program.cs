@@ -49,6 +49,10 @@ namespace Algorithm
             var revrList = Enumerable.Reverse(continuousList).ToList();
 
 
+            //************************************************************************************************
+            //Education(個人学習用)
+            //************************************************************************************************
+            Console.WriteLine(Education.Stetementer()); //returnで「0」が返ってくるから「0」が出力される
         }
     }
 }
