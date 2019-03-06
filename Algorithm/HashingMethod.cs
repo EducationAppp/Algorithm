@@ -11,31 +11,40 @@ namespace Algorithm
 {
     class HashingMethod
     {
-        private ReadOnlyCollection<int> _numsList;
-        private Dictionary<int, int> _hashValueList = new Dictionary<int, int>();
+        private ReadOnlyCollection<string> _numsList;
+        private Dictionary<string, List<string>> _hashValueList = new Dictionary<string, List<string>>();
 
         //コンストラクタ
-        public HashingMethod(ReadOnlyCollection<int> nums) {
+        public HashingMethod(ReadOnlyCollection<string> nums) {
             _numsList = nums;
         }
 
-        public void HashValueCreater(int num)
+        public void HashValueCreater(string[] name)
         {
-            var hashValue = num.GetHashCode();
-            Console.WriteLine($"{num}のハッシュ値は{hashValue}です。");
+            var hashValue = name[1].GetHashCode();
+            Console.WriteLine($"{name[1]}のハッシュ値は{hashValue}です。");
 
             //キーの存在チェック
-            if (!_hashValueList.ContainsKey(hashValue))
+            if (_hashValueList.ContainsKey(name[0]))
             {
-                _hashValueList.Add(hashValue, num);
+                List<string> list = _hashValueList[name[0]];
+                list.Add(name[1]);
             }
             else {
+                List<string> list = new List<string>();
+                list.Add(name[1]);
+                _hashValueList[name[1]] = list;
 
             }
             
         }
 
-        //public void HashSearcher(int num)
+        public void HashSearcher(string Name) {
+            var hashValue = Name.GetHashCode();
+
+
+
+        }
 
     }
 }

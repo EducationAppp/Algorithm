@@ -56,29 +56,5 @@ namespace Algorithm
 
 
 
-////添え字で考える
-//var firstArray = 0;
-//var arrayLength = arrayNumber2.Length;
-
-
-//    while (firstArray<= arrayLength) {
-//        var midArray = (firstArray + arrayLength) / 2;
-//        if (arrayNumber2[midArray] == 6)
-//        {
-//            Console.WriteLine("二分探索法(バイナリサーチ)で探しました");
-//            return;
-//        }
-//        else
-//        {
-//            if (arrayNumber2[midArray] < 6)
-//            {
-//                firstArray = midArray + 1;
-//            }
-//            else
-//            {
-//                arrayLength = midArray - 1;
-//            }
-//        }
-//    }
 
 

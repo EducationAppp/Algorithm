@@ -8,8 +8,9 @@ namespace Algorithm
 {
     class Education
     {
-        public static int Stetementer() {
+        public static int Statementer() {
             //「continue」「break」「return」の学習
+
             //continue;処理を打ち切って繰り返しを続行
             //break   :繰り返しをその場で終了
             //return  :メソッドの実行を打ち切って、呼び出し側に戻る
